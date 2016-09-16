@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<div>
+
+<form>
+<input type="text" id="formValueId1" name="valueId1"/>
+<input type="text" id="formValueId2" name="valueId2"/>
+<input type="button" value="Submit" onclick="showPosition(document.getElementById('formValueId1').value,document.getElementById('formValueId2').value)"/>
+</form>
+
+</div>
+<br/>
+<br/>
+
+<div id="mapholder"></div>
+
+<script>
+
+function showPosition(latitude,longitude) {
+    var latlon = latitude + "," + longitude;
+
+    var img_url = "http://maps.googleapis.com/maps/api/staticmap?center="
+    +latlon+"&zoom=14&size=400x300&sensor=false";
+    document.getElementById("mapholder").innerHTML = "<img src='"+img_url+"'>";
+}
+
+</script>
+
+</body>
+</html>
+
