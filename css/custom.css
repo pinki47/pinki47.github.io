@@ -1,8 +1,10 @@
 body {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Lato', sans-serif;    
+    background: #333333;
 }
 h1{
     margin-bottom: 40px;
+    color : #137842;
 }
 label {
     color: #333;
@@ -12,4 +14,13 @@ label {
     text-transform: uppercase;
     letter-spacing: 0.1em;
     margin-bottom: 20px;
+}
+
+#contact-form
+{
+border-style: outset;
+background: #FFFFFF;
+}
+td{
+color: white;
 }
