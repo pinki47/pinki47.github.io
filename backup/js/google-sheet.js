@@ -70,7 +70,7 @@ $("#contact-form").submit(function(event){
 
     // Fire off the request to /form.php
     request = $.ajax({
-        url: "https://script.google.com/macros/s/AKfycbx_3Q_-iYYAVFq8JP0PKw45coR5k1Bo3YpF6DuEK0qB62KAZXk/exec",
+        url: "https://script.google.com/macros/s/AKfycbw_v77oNciQ_eEnZAMzkO1wvuYOAFlki67aPB0ZgT4WrWWuuKA/exec",
         type: "post",
         data: serializedData
     });
