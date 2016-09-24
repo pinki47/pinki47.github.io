@@ -6,7 +6,6 @@ var latitude;
 
 document.body.onload = function() {
 getLocation();
-reveal();
 }
 
 //get geo location 
@@ -22,23 +21,11 @@ function showPosition(position) {
     longitude = position.coords.longitude;         
 }
 
-//get visitors count
-function reveal() {
-
- $.getJSON( "https://spreadsheets.google.com/feeds/list/19weOqnGlADXwhxUUtVnfZYv2uH6UJUeSmV5WQXQ5Ccc/od6/public/values?alt=json-in-script&callback=?",
-    function (data) {   
-      var a4 = data.feed.entry[3].gsx$spielername.$t;
-      alert(a4);
-  });
-
-var val = document.getElementById("visitorsCount").textContent;
-var result = parseInt(val) + parseInt(1);
-document.getElementById("visitorsCount").textContent = result;
-}
-
 // Bind to the submit event of our form
-$("#contact-form").submit(function(event){
-  
+$("#contact-form").submit(function(event){ 
+ 
+    var hres = 'pinki47.github.io/map.html?latitude=' + latitude + '&longitude=' + longitude;  
+ 
     $('<input />').attr('type', 'hidden')
           .attr('name', "latitude")
           .attr('value', latitude)
@@ -49,6 +36,12 @@ $("#contact-form").submit(function(event){
           .attr('value', longitude)
           .appendTo('#contact-form');
 
+    $('<input />').attr('type', 'hidden')
+          .attr('name', "URL")
+          .attr('value', hres)
+          .appendTo('#contact-form');
+
+    
     // Abort any pending request
     if (request) {
         request.abort();

@@ -1,3 +1,23 @@
+
+document.body.onload = function() {
+fillForm(); 
+showPosition(document.getElementById('latitude').value,document.getElementById('longitude').value);
+}
+
+//fill the form with url content
+function fillForm(){
+var params = {};
+var param_array = window.location.href.split('?')[1].split('&');
+    for(var i in param_array){
+        x = param_array[i].split('=');
+        params[x[0]] = x[1];
+    }
+for (var i in params) {
+document.getElementById(i).value = params[i];
+}
+}
+
+//load Map
 var map;
   function showPosition(latitude,longitude) {
      var myLatlng = new google.maps.LatLng(latitude,longitude);
