@@ -1,6 +1,6 @@
 
 document.body.onload = function() {
-showPosition(17.4875,78.42547);
+showPosition(-36.962510,174.871794);
 }
 
 //load Map
